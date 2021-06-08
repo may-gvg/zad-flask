@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+ {% block head %}
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/styles.css') }}" />
+ {% endblock %}
+
+        <meta charset="utf-8">
+        <title>Autoportret</title>
+    </head>
+    <body>
+    <h1>Witam na mojej stronie domowej</h1> 
+    
+    <a href="https://i.iplsc.com/-/000855Q03DLUJ7C6-C122.jpg"><img class="center" src="https://i.iplsc.com/-/000855Q03DLUJ7C6-C122.jpg" width="300" alt="tool"></a>
+
+    <div> 
+   
+
+{% if errors %}
+<div id="errors">
+<h2>errors!</h2>
+<ol>
+    {% for error in errors %}
+    <li>{{error}}</li>
+    {% endfor %}
+</ol>
+</div>
+{% endif %}
+
+<h1>Warehouse</h1>
+<img src="{{url_for('static',filename='logo.jpg')}}" />
+<div id="content">{% block content %}{% endblock %}</div>
+
+<ul>
+    {% for item in items %}
+    <li>{{item}}</li>
+    {% endfor %}
+</ul>
+
+
+    </div> 
+
+
+    <div> 
+    <h2>O mnie</h2>
+    <p>Maciek Gubała </p></div>
+    
+    <div> 
+    <h2>Zainteresowania</h2>
+   
+   
+   
+    <ul>
+    <li>latanie</li>
+    <li>kontemplowanie</li>
+    <li>podrózowanie</li>
+    <li>kodowanie</li>
+    
+    </ul>
+    
+   </div>
+    
+    <div> 
+    <h2>Najlepsza Muza</h2>
+    <table class = "ramka">
+    <thead> 
+    
+    <tr>
+    
+    <th>Band</th>
+    <th>Ocena</th>
+    </tr> 
+    </thead>
+    
+    <tbody>
+    
+    <tr>
+    <td>Tool</td><td>77.7</td>
+    </tr>
+    <tr>
+    <td>NIN </td><td>10.0</td>
+    </tr>
+    <tr>
+    <td>Puscifer</td><td>66.6</td>
+    </tr>
+    
+    </tbody>
+
+ 
+    
+    </table>
+ </div>
+
+    <div> 
+    <h2>Kontakt</h2>
+   
+   
+   
+    <ul>
+    <li>e.mail: mac.gub@gmail.com</li>
+    <li>mob: +48 663 276 667</li>
+    <li>Ustroń</li>
+    
+    </ul>
+    
+    
+    <form action="/greeting" id="usrform" method="POST">
+    Imię:
+    <input type="text" name="usrname">
+    <input type="submit">
+    </form>
+
+    <textarea name="comment" form="usrform">Wpisz swoją wiadomość...</textarea> 
+    
+   </div>
+
+
+
+
+ 
+    </body>
+</html>
+
