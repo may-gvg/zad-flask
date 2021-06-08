@@ -1,0 +1,31 @@
+
+{% extends "parent.html" %}
+
+{% block content %}
+
+    <div> 
+    <h2>Kontakt</h2>
+   
+   
+   
+    <ul>
+    <li>e.mail: mac.gub@gmail.com</li>
+    <li>mob: +48 663 276 667</li>
+    <li>Ustroń</li>
+    
+    </ul>
+    
+    
+    <form action="/mypage/contact" id="usrform" method="POST">
+    Imię:
+    <input type="text" name="usrname">
+    <input type="submit">
+    </form>
+
+    <textarea name="comment" form="usrform">Wpisz swoją wiadomość...</textarea> 
+    
+   </div>
+
+
+
+{% endblock %}
