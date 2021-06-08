@@ -5,15 +5,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
-@app.route('/greeting', methods=['GET', 'POST'])
-def message():
-   if request.method == 'GET':
-       print("We received GET")
-       return render_template("greeting.html")
-   elif request.method == 'POST':
-       print("We received POST")
-       print(request.form)
-       return redirect("/")
+
 
 
 @app.route('/tata', methods=['GET', 'POST'])
